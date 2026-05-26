@@ -1,0 +1,18 @@
+# Local terraform state — ours lives in S3, never commit this
+*.tfstate
+*.tfstate.backup
+
+# Terraform working directory — downloaded providers and plugins
+.terraform/
+.terraform.lock.hcl
+
+# Variable files containing real secrets
+*.tfvars
+*.tfvars.json
+
+# SSH keys — never ever commit these
+*.pem
+
+# Crash logs
+crash.log
+override.tf

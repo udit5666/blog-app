@@ -1,0 +1,22 @@
+# Node
+node_modules/
+.env
+.env.production
+.env.local
+
+# React build output
+frontend/build/
+
+# Terraform secrets
+terraform/*.tfvars
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+
+# SSH keys
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db

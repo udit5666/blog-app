@@ -1,0 +1,6 @@
+# Copy this file to terraform.tfvars and fill in real values
+# Never commit terraform.tfvars — it contains real secrets
+
+db_password     = "your_secure_password_here"
+jwt_secret      = "your_long_random_secret_here"
+github_username = "your_github_username"
