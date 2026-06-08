@@ -1,4 +1,7 @@
 # CloudBlog — Full Stack Blog App
+<img width="795" height="806" alt="Screenshot_8-6-2026_144655_" src="https://github.com/user-attachments/assets/5ac75d97-2ed6-4d24-be5f-70e7e9c5718b" />
+
+
 
 React + Express + PostgreSQL blog app built for AWS deployment.
 
