@@ -3,7 +3,42 @@
 
 
 
-React + Express + PostgreSQL blog app built for AWS deployment.
+User's Browser
+│
+│ 1. LOADS REACT APP
+│    GET https://d4zr8lhl9rdjb.cloudfront.net
+│              ↓
+│         CloudFront (CDN)
+│              ↓ cache miss
+│           S3 Bucket
+│         (index.html, main.js, main.css)
+│
+│ React app now running in browser
+│
+│ 2. FETCHES DATA (every user action)
+│    fetch("http://ALB_DNS/api/...")
+│              ↓
+│    Application Load Balancer
+│    (receives all API traffic)
+│              ↓
+│    EC2 Instance (Node.js/Express)
+│    Running: node src/index.js via PM2
+│    Does:
+│    ├── Validates JWT tokens (auth middleware)
+│    ├── Runs business logic (controllers)
+│    ├── Queries PostgreSQL database
+│    └── Returns JSON responses
+│              ↓
+│    RDS PostgreSQL
+│    (stores all persistent data)
+│    ├── users table
+│    ├── posts table
+│    └── comments table
+│
+│ 3. JSON DATA COMES BACK
+│    EC2 → ALB → Browser
+│    React updates UI with data
+│    User sees: posts, comments, profile
 
 ## Project structure
 
